@@ -7,4 +7,5 @@ export interface PopularMovies {
   original_language: string
   poster_path: ImageURISource
   vote_average: number
+  overview: string
 }
