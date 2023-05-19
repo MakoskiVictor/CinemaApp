@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar'
 import Constants from 'expo-constants'
 import { StyleSheet, Text, View, FlatList, Image } from 'react-native'
 import { useSearchPopular } from './src/hooks/useSearchPopular';
+import { IMAGE_INIT_PATH } from './src/data/servicesConstants';
+import { Card } from './src/components/Cards/Card';
 
 
 export default function App() {
@@ -10,19 +12,14 @@ export default function App() {
 
   return (
       <View style={styles.container} >
-        <Text>Cinema Home</Text>
+        <Text style={styles.title} >Cinema Home</Text>
         <View>
           { error && <Text>{error}</Text> }
           { isLoading && <Text>Loading...</Text> }
           { isLoading === false &&
-            <FlatList data={popularMovies} renderItem={( {item} ) => (
-              <View key={item.id}>
-                <Text>{item.title}</Text>
-                <Image source={{uri: `https://image.tmdb.org/t/p/original${item.poster_path}` }} style={styles.image} />
-              </View>
-            )} />
+            <Card popularMovies={popularMovies} />
+            } 
             
-          }
           </View>
         <StatusBar style="auto" />
       </View>
@@ -31,12 +28,17 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    /* flex: 1, */
-    backgroundColor: '#fff',
+    flex: 0,
+    backgroundColor: '#333',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: Constants.statusBarHeight,
      flexGrow: 1 
+  },
+  title: {
+    marginTop: Constants.statusBarHeight,
+    fontSize: 30,
+    fontFamily: 'sans-serif'
   },
   image: {
     width: 200,
