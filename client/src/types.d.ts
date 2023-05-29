@@ -9,3 +9,7 @@ export interface PopularMovies {
   vote_average: number
   overview: string
 }
+
+export interface PopularMoviesChildren {
+  popularMovies: PopularMovies[];
+}
