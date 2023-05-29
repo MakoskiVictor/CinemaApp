@@ -1,47 +1,25 @@
-import { StatusBar } from 'expo-status-bar'
-import Constants from 'expo-constants'
-import { StyleSheet, Text, View, FlatList, Image } from 'react-native'
-import { useSearchPopular } from './src/hooks/useSearchPopular';
-import { IMAGE_INIT_PATH } from './src/data/servicesConstants';
-import { Card } from './src/components/Cards/Card';
+import { NativeRouter } from 'react-router-native'
+import { Main } from './src/pages/Main'
 
-
+import { StyleSheet } from 'react-native'
+ 
 export default function App() {
-
-   const { popularMovies, isLoading, error } = useSearchPopular()
-
   return (
-      <View style={styles.container} >
-        <Text style={styles.title} >Cinema Home</Text>
-        <View>
-          { error && <Text>{error}</Text> }
-          { isLoading && <Text>Loading...</Text> }
-          { isLoading === false &&
-            <Card popularMovies={popularMovies} />
-            } 
-            
-          </View>
-        <StatusBar style="auto" />
-      </View>
-  );
+
+    <NativeRouter>
+      <Main />
+    </NativeRouter>
+      
+  )
+
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 0,
-    backgroundColor: '#333',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: Constants.statusBarHeight,
-     flexGrow: 1 
-  },
-  title: {
-    marginTop: Constants.statusBarHeight,
-    fontSize: 30,
-    fontFamily: 'sans-serif'
-  },
-  image: {
-    width: 200,
-    height: 300,
+  linearGradient: {
+    flex: 1,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 5
   }
-});
+})
+
