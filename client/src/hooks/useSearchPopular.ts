@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { API_URL, POPULAR_PATH, API_KEY } from '../data/servicesConstants'
-import { PopularMovies } from '../types.d'
+import { type PopularMovies } from '../types/movies/types'
 
 export function useSearchPopular () {
   const [popularMovies, setPopularMovies] = useState<PopularMovies[]>([])
