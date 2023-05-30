@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, FlatList, Image } from 'react-native'
 import { IMAGE_INIT_PATH } from '../../data/servicesConstants'
-import { type PopularMoviesChildren } from '../../types'
+import { type PopularMoviesChildren } from '../../types/movies/types'
 import { Link } from 'react-router-native'
 
 export function Card ( {popularMovies} : PopularMoviesChildren): JSX.Element {
