@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import { API_URL, API_KEY } from '../data/servicesConstants'
 import { singleMovieAdapter } from '../utils/adapters/singleMovieAdapter'
+import { type SingleMovie } from '../types/movies/types'
 
 export function useSearchMovie (id : string | undefined) {
-  const [movie, setMovie] = useState([])
+  const [movie, setMovie] = useState<SingleMovie[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const [error, setError] = useState(null)
 
