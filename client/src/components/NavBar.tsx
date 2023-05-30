@@ -1,11 +1,14 @@
 import { View, Text, StyleSheet, Image } from 'react-native'
+import { Link } from 'react-router-native'
 
 export function NavBar () {
   return(
     <View style={styles.container}>
+      <Link to='/'>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Cinema Home</Text>
       </View>
+      </Link>
       <View style={styles.separator} />
       <View style={styles.menuContainer}>
         <Image source={require('../assets/icons/menu.png')} style={styles.menuLogo} />
