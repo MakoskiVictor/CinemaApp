@@ -1,6 +1,7 @@
 import { type Movie } from '../../types/adapters/Movie'
+import { type SingleMovie } from '../../types/movies/types'
 
-export const singleMovieAdapter = (props : Movie) => {
+export const singleMovieAdapter = (props : Movie) : SingleMovie[] => {
   let arrayMovie = []
   arrayMovie.push(props)
   
@@ -9,7 +10,7 @@ export const singleMovieAdapter = (props : Movie) => {
       id: x.id,
       title: x.original_title,
       tagline: x.tagline,
-      languaje: x.original_language,
+      language: x.original_language,
       status: x.status,
       release: x.release_date,
       score: x.vote_average,
