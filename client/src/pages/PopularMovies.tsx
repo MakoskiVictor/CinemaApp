@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar'
-import Constants from 'expo-constants'
+/* import Constants from 'expo-constants' */
 import { StyleSheet, Text, View } from 'react-native'
 import { useSearchPopular } from '../hooks/useSearchPopular'
 import { Card } from '../components/Cards/Card'
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     flex: 0,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: Constants.statusBarHeight,
+    /* marginTop: Constants.statusBarHeight, */
      flexGrow: 1 
   },
   image: {
