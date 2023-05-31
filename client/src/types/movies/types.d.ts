@@ -16,7 +16,7 @@ export interface PopularMoviesChildren {
 
 export interface SingleMovie {
   adult: boolean
-  genres: Genres
+  genres: Genres[]
   id: number
   images: {
     poster1: string
@@ -35,18 +35,6 @@ export interface SingleMovie {
 }
 
 interface Genres {
-   [
-    {
       id: number, 
       name: string 
-    },
-    {
-      id: number, 
-      name: string
-    },
-    {
-      id: number,
-      name: string
-    }
-  ]
 }
